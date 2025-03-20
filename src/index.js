@@ -2,9 +2,11 @@
 import "./default-reset.css";
 import "./styles.css";
 
-document.querySelector(".nav-bar").addEventListener("click", (e) => {
+document.addEventListener("click", (e) => {
   const { target } = e;
   let menuContent;
+
+  console.log(target.className);
 
   switch (target.className) {
     case "drop-down":

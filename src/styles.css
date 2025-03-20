@@ -1,7 +1,10 @@
+body {
+    min-height: 100vh;
+}
+
 .nav-bar{
     border: 1px solid;
 }
-
 
 .menu-container {
     display: flex;
