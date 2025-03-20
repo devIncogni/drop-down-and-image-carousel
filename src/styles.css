@@ -1,0 +1,54 @@
+.nav-bar{
+    border: 1px solid;
+}
+
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    max-width: 80%;
+    margin: auto;
+    
+    border: 1px solid;
+
+    user-select: none;
+    
+}
+
+.drop-down {
+    cursor: pointer;
+    padding: 1rem;
+    position: relative;
+
+    border: 1px solid;
+}
+
+.menu-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    border: 1px solid;
+
+    pointer-events: none;
+    opacity: 0;
+}
+
+.link-container {
+    padding: 1rem;
+    border: 1px solid;
+
+    min-width: 8rem;
+}
+
+.link-container > .menu-content {
+    top: 0;
+    left: 100%;
+}
+
+.active {
+    pointer-events: all;
+    opacity: 100%;
+}
