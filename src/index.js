@@ -25,6 +25,19 @@ document.querySelector(".nav-bar").addEventListener("click", (e) => {
         });
       }
 
+      if (
+        target.className === "link-container drop-down" ||
+        target.className === "sub-button"
+      ) {
+        document
+          .querySelectorAll(".link-container.drop-down > .menu-content")
+          .forEach((menu) => {
+            if (menu.classList.contains("active")) {
+              menu.classList.remove("active");
+            }
+          });
+      }
+
       if (menuContent.classList.contains("active")) {
         menuContent.classList.remove("active");
         break;
