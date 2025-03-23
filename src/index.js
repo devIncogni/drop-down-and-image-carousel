@@ -6,8 +6,6 @@ document.addEventListener("click", (e) => {
   const { target } = e;
   let menuContent;
 
-  console.log(target.className);
-
   switch (target.className) {
     case "drop-down":
     case "link-container drop-down":
