@@ -6,6 +6,8 @@ document.addEventListener("click", (e) => {
   const { target } = e;
   let menuContent;
   let locatorID;
+  // let currentLocator
+  let scrollDirection;
   let activeImg = document.querySelector(".active-img");
   let activeLocator = document.querySelector(".active-locator");
 
@@ -60,6 +62,37 @@ document.addEventListener("click", (e) => {
 
       activeLocator.classList.add("active-locator");
 
+      break;
+
+    case "scroll":
+      scrollDirection = target.id;
+
+      activeImg = document.querySelector(`.active-img`);
+      activeLocator = document.querySelector(`.active-locator`);
+      locatorID = activeLocator.id.charAt(2);
+
+      activeImg.classList.remove("active-img");
+      activeLocator.classList.remove("active-locator");
+
+      if (scrollDirection === "left") {
+        locatorID = parseInt(locatorID, 10) - 1;
+        if (locatorID < 1) {
+          locatorID = 5;
+        }
+        activeImg = document.querySelector(`#i-${locatorID}`);
+        activeLocator = document.querySelector(`#l-${locatorID}`);
+      } else if (scrollDirection === "right") {
+        locatorID = parseInt(locatorID, 10) + 1;
+
+        if (locatorID > 5) {
+          locatorID = 1;
+        }
+        activeImg = document.querySelector(`#i-${locatorID}`);
+        activeLocator = document.querySelector(`#l-${locatorID}`);
+      }
+
+      activeImg.classList.add("active-img");
+      activeLocator.classList.add("active-locator");
       break;
 
     default:
