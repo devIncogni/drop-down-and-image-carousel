@@ -93,12 +93,15 @@ body {
 }
 
 .image-display>img {
-    /* max-height: 100%; */
-    /* opacity: 100%; */
-    width: 100%;
-    height: 100%;
-    opacity: 0%;
+    width: 0%;
+
     pointer-events: none;
+}
+
+.active-img {
+    pointer-events: all !important;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .image-locator {
@@ -117,6 +120,10 @@ body {
     /* background-color: black; */
     border-radius: 50%;
     cursor: pointer;
+}
+
+.active-locator {
+    background-color: black;
 }
 
 /* #endregion Image Carousel Styling */

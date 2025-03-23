@@ -5,6 +5,9 @@ import "./styles.css";
 document.addEventListener("click", (e) => {
   const { target } = e;
   let menuContent;
+  let locatorID;
+  let activeImg = document.querySelector(".active-img");
+  let activeLocator = document.querySelector(".active-locator");
 
   switch (target.className) {
     case "drop-down":
@@ -43,6 +46,20 @@ document.addEventListener("click", (e) => {
       }
 
       menuContent.classList.add("active");
+      break;
+
+    case "locator":
+      activeImg.classList.remove("active-img");
+      activeLocator.classList.remove("active-locator");
+
+      locatorID = target.id.charAt(2);
+      activeImg = document.querySelector(`#i-${locatorID}`);
+      activeLocator = document.querySelector(`#l-${locatorID}`);
+
+      activeImg.classList.add("active-img");
+
+      activeLocator.classList.add("active-locator");
+
       break;
 
     default:
