@@ -105,3 +105,23 @@ document.addEventListener("click", (e) => {
       break;
   }
 });
+
+function activateNextImg() {
+  const currentActiveImg = document.querySelector(".active-img");
+  const currentActiveLocator = document.querySelector(".active-locator");
+
+  currentActiveImg.classList.remove("active-img");
+  currentActiveLocator.classList.remove("active-locator");
+
+  let next = parseInt(currentActiveImg.id.charAt(2), 10);
+
+  next = next + 1 > 5 ? 1 : next + 1;
+
+  const nextActiveImg = document.querySelector(`#i-${next}`);
+  const nextActiveLocator = document.querySelector(`#l-${next}`);
+
+  nextActiveImg.classList.add("active-img");
+  nextActiveLocator.classList.add("active-locator");
+}
+
+setInterval(activateNextImg, 5000);
